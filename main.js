@@ -38,7 +38,11 @@ function createInspirationalMessage(wordsArray) {
     const index2 = generateRandomNum(wordsArray);
     const index3 = generateRandomNum(wordsArray);
 
-    console.log(index1, index2, index3)
+    const word1 = wordsArray[index1];
+    const word2 = wordsArray[index2];
+    const word3 = wordsArray[index3];
+
+    console.log(word1, word2, word3);
 }
 
 readFile(createInspirationalMessage);
