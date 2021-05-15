@@ -1,5 +1,0 @@
-Basic Html
-Basic Css possibly Bootstrap
-Javascript
-
-Topic of messages will be philosphy quotes
