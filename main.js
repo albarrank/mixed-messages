@@ -13,7 +13,7 @@ function removeTabSpacing(lines) {
     return words;
 }
 
-const readFile = ()=> {
+function readFile(callback) {
 
     fs.readFile('./words.txt', 'utf8', (err, data) => {
         if (err) {
@@ -24,10 +24,21 @@ const readFile = ()=> {
         const lines = parseIntoLines(data);
         const words = removeTabSpacing(lines);
 
-        console.log(words);
+        callback(words);
+    });
 
-
-    })
 }
 
-readFile();
+function generateRandomNum(array) {
+    return Math.floor(Math.random() * array.length);
+}
+function createInspirationalMessage(wordsArray) {
+    
+    const index1 = generateRandomNum(wordsArray);
+    const index2 = generateRandomNum(wordsArray);
+    const index3 = generateRandomNum(wordsArray);
+
+    console.log(index1, index2, index3)
+}
+
+readFile(createInspirationalMessage);
