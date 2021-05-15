@@ -43,18 +43,15 @@ function createInspirationalMessage(wordsArray) {
     const word2 = wordsArray[index2];
     const word3 = wordsArray[index3];
 
-    return [word1, word2, word3];
+    displayMessage([word1, word2, word3]);
 }
 
 function displayMessage(messageArr) {
     console.log("Here is your Inpiriational Quote for the day!!");
     console.log("===============================================")
-    console.log('\n');
     console.log(messageArr[0]);
     console.log(messageArr[1]);
     console.log(messageArr[2]);
 }
 
-const message = readFile(createInspirationalMessage);
-
-displayMessage(message);
+readFile(createInspirationalMessage);
