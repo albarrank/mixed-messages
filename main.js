@@ -32,6 +32,7 @@ function readFile(callback) {
 function generateRandomNum(array) {
     return Math.floor(Math.random() * array.length);
 }
+
 function createInspirationalMessage(wordsArray) {
     
     const index1 = generateRandomNum(wordsArray);
@@ -42,7 +43,18 @@ function createInspirationalMessage(wordsArray) {
     const word2 = wordsArray[index2];
     const word3 = wordsArray[index3];
 
-    console.log(word1, word2, word3);
+    return [word1, word2, word3];
 }
 
-readFile(createInspirationalMessage);
+function displayMessage(messageArr) {
+    console.log("Here is your Inpiriational Quote for the day!!");
+    console.log("===============================================")
+    console.log('\n');
+    console.log(messageArr[0]);
+    console.log(messageArr[1]);
+    console.log(messageArr[2]);
+}
+
+const message = readFile(createInspirationalMessage);
+
+displayMessage(message);
