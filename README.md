@@ -1,5 +1,5 @@
 # Mixed-messages
-This is a node.js application where you can genereate randomized 3 word quotes buy using fs module in node.js.
+This is a node.js application where you can generate randomized 3 word quotes by using the fs module in node.js.
 
 ## Table of contents
 * [General Info](#general-information)
