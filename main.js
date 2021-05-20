@@ -1,13 +1,18 @@
 const fs = require('fs');
 
 function parseIntoLines(arr) {
+    // splits lines from text file by the enter spaces at the end of each line
     return arr.split('\n')
 }
 
-function removeTabSpacing(lines) {       
+function removeTabSpacing(lines) {
+    // create a 2D array by splitting each word in each line by the tab spaces       
     let words = lines.map((line) => line.split('\t'));
         
+    // flatten the array in order to create a 1D array to loop trough each element
     words = [].concat.apply([], words);
+
+    // filter out any word that is not an empty space created by the lines.map();
     words = words.filter(word => word !== '');
 
     return words;
@@ -24,6 +29,7 @@ function readFile(callback) {
         const lines = parseIntoLines(data);
         const words = removeTabSpacing(lines);
 
+        // used callback for retaining value due to asynchronous calling
         callback(words);
     });
 
